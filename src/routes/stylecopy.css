@@ -1,0 +1,56 @@
+.bullseye {
+    background-color: #0072f6;
+    -js-display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    height: 700px;
+    position: relative;
+    color: #fff;
+}
+
+.bullseye__circle {
+    background-image: url(img/bg-bullseye.svg);
+    background-repeat: no-repeat;
+    background-position: 50%;
+    background-size: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+
+.bullseye__item--25 {
+    width: 25%;
+}
+.bullseye__item--50 {
+    width: 50%;
+
+}
+.bullseye__content {
+    text-align: center;
+    height: 100%;
+    width: 100%;
+}
+
+.bullseye__ipad, .bullseye__macbook {
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0;
+    -webkit-transition: all .4s ease-out;
+    transition: all .4s ease-out;
+    height: 538px;
+    width: 100%;
+}
+.bullseye__item {
+    -js-display: flex;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    position: relative;
+}
