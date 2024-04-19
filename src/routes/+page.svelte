@@ -7,16 +7,16 @@
   import Slider from '../components/slider.svelte';
   const ongoing = [
     {
-      text: 'We welcome Mr. Mick An Dung, the head Project Operation for Vintage Tech Corporation. He will lead the team to run security protocols and Installations.',
-      img: '/favicon.png',
+      text: 'We welcome Mr. Vinh Quan, the head Project Operation for Vintage Tech Corporation. He will lead the team to run security protocols and Installations.',
+      img: '/img.png',
     },
     {
-      text: 'We welcome Mr. Hangyeol Kwang-Su, a Senior tech consultant with Tidal corporation for a Technical Upgrade and Installation project in Slovakia. We are ready to work with your team.',
-      img: '/favicon.png',
+      text: 'We welcome Mr. Do Vinh Quang, a Senior tech consultant with Tidal corporation for a Technical Upgrade and Installation project in Slovakia. We are ready to work with your team.',
+      img: '/img2.jpg',
     },
     {
-      text: 'Meet the newly promoted Director. welcome Mr. Trịnh Phước Mạnh to the Board Of Directors and highest role at KongDev Company Limited, Mr. Trịnh Phước Mạnh will also be spearheading the first project of the year, we will keep you updated.',
-      img: '/favicon.png',
+      text: 'Meet the newly promoted Director. welcome Mr. Dan Ham to the Board Of Directors and highest role at KongDev Company Limited, Mr. Trịnh Phước Mạnh will also be spearheading the first project of the year, we will keep you updated.',
+      img: '/img1.png',
     },
   ];
 
@@ -55,11 +55,6 @@
     },
   ];
 </script>
-
-<svelte:head>
-  <title>Home</title>
-  <meta name="description" content="Svelte demo app" />
-</svelte:head>
 
 <section class="  w-full m-auto object-contain [background-size:cover] bg-slate-900">
   <div class="w-full h-[100vh] backdrop-blur-[5px] px-5 bg-[#0000008e]">
