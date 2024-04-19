@@ -1,93 +1,119 @@
 <script>
-    let phoneNumber = '';
-    let email = '';
-    let company = '';
-    let firstName = '';
-    let lastName = '';
-    let extraDetails = ''
-  
-    function handleSubmit() {
-      const formData = {
-        phoneNumber,
-        email,
-        company,
-        firstName,
-        lastName,
-      };
-  
-      // You can now send this formData to your server or perform any other action
-      // Here, we'll just log it to the console
-      console.log(formData);
-    }
-  </script>
+  import { sendToTelegram } from './../lib/fun/both.js';
+  let details = '';
+  let email = '';
+  let company = '';
+  let firstName = '';
+  let lastName = '';
+  let sending = false;
+
+  async function handleSubmit() {
+    sending = true;
+    const formData = {
+      details,
+      email,
+      company,
+      firstName,
+      lastName,
+    };
+
+    await sendToTelegram(formData);
+    details = '';
+    email = '';
+    company = '';
+    firstName = '';
+    lastName = '';
+    sending = false;
+    //console.log(formData);
+  }
+</script>
+
 <div class="w-full md:w-[40%] mx-auto p-5 bg-white" id="contact">
   <div class="text-center mb-16">
-    <p class="mt-4 text-sm leading-7 text-gray-500 font-regular uppercase">
-        Contact
-      </p>
-      <h3 class="text-3xl sm:text-4xl leading-normal font-extrabold tracking-tight text-gray-900">
-        Get In <span class="text-indigo-600">Touch</span>
-      </h3>
+    <p class="mt-4 text-sm leading-7 text-gray-500 font-regular uppercase">Contact</p>
+    <h3 class="text-3xl sm:text-4xl leading-normal font-extrabold tracking-tight text-gray-900">
+      Get In <span class="text-indigo-600">Touch</span>
+    </h3>
   </div>
-  
-  <form class="w-full"  on:submit|preventDefault={handleSubmit}>
-  <div class="flex flex-wrap -mx-3 mb-6">
-    <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
-      <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
-        First Name
-      </label>
-      <input class="appearance-none block w-full bg-gray-200 text-gray-700 border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white" id="grid-first-name" type="text" placeholder="Jane" required>
-      <!-- <p class="text-red-500 text-xs italic">Please fill out this field.</p> -->
-    </div>
-    <div class="w-full md:w-1/2 px-3">
-      <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
-        Last Name
-      </label>
-      <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-last-name" type="text" placeholder="Doe" required>
-    </div>
-  </div>
-  <div class="flex flex-wrap -mx-3 mb-6">
-    <div class="w-full px-3">
-      <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-password">
-        Email Address
-      </label>
-      <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-email" type="email" placeholder="********@*****.**">
-    </div>
-  </div>
-  <div class="flex flex-wrap -mx-3 mb-6">
-    <div class="w-full px-3">
-      <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-email">
-        Company*
-      </label>
-      <input class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-email" type="email" placeholder="********@*****.**" required>
-    </div>
-  </div>
+
+  <form class="w-full" on:submit|preventDefault={handleSubmit}>
     <div class="flex flex-wrap -mx-3 mb-6">
-    <div class="w-full px-3">
-      <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-message">
-        Your Message
-      </label>
-      <textarea rows="10" class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500" required>
-        
-      </textarea>
-    </div>
-    <div class="flex justify-between w-full px-3">
-      <div class="md:flex md:items-center">
-        <label class="block text-gray-500 font-bold">
-          <input class="mr-2 leading-tight" type="checkbox">
-          <span class="text-sm">
-            Send me your newsletter!
-          </span>
+      <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
+          First Name
         </label>
+        <input
+          class="appearance-none block w-full bg-gray-200 text-gray-700 border rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white"
+          id="grid-first-name"
+          type="text"
+          placeholder="Jane"
+          bind:value={firstName}
+          required
+        />
+        <!-- <p class="text-red-500 text-xs italic">Please fill out this field.</p> -->
       </div>
-      <button class="shadow bg-indigo-600 hover:bg-indigo-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-6 rounded" type="submit">
-        Send Message
-      </button>
+      <div class="w-full md:w-1/2 px-3">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-last-name">
+          Last Name
+        </label>
+        <input
+          class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+          id="grid-last-name"
+          type="text"
+          placeholder="Doe"
+          required
+          bind:value={lastName}
+        />
+      </div>
     </div>
-      
-  </div>
-    
-</form>
+    <div class="flex flex-wrap -mx-3 mb-6">
+      <div class="w-full px-3">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for=""> Email Address </label>
+        <input
+          class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+          id="grid-email"
+          type="email"
+          placeholder="********@*****.**"
+          bind:value={email}
+        />
+      </div>
+    </div>
+
+    <div class="flex flex-wrap -mx-3 mb-6">
+      <div class="w-full px-3">
+        <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-message">
+          Your Message
+        </label>
+        <textarea
+          rows="10"
+          class="appearance-none block w-full bg-gray-200 text-gray-700 border border-gray-200 rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
+          required
+          bind:value={details}
+        />
+      </div>
+      <div class="flex justify-between w-full px-3">
+        <div class="md:flex md:items-center">
+          <label class="block text-gray-500 font-bold">
+            <input class="mr-2 leading-tight" type="checkbox" />
+            <span class="text-sm"> Send me your newsletter! </span>
+          </label>
+        </div>
+        {#if sending}
+          <button
+            class="shadow bg-gray-600 hover:bg-indigo-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-6 rounded"
+            disabled
+          >
+            Sending...
+          </button>
+        {:else}
+          <button
+            class="shadow bg-indigo-600 hover:bg-indigo-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-6 rounded"
+            type="submit"
+          >
+            Send Message
+          </button>
+        {/if}
+      </div>
+    </div>
+  </form>
 </div>
-
-

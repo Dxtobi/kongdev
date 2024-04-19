@@ -19,28 +19,6 @@
       img: '/favicon.png',
     },
   ];
-  const links = [
-    'https://www.KongDev.com/app/assets/cbef7669/img/clients-logo/kjk.svg',
-    'https://www.KongDev.com/app/assets/cbef7669/img/clients-logo/ey.svg',
-    'https://www.KongDev.com/app/assets/cbef7669/img/clients-logo/eurostar.svg',
-    'https://www.KongDev.com/app/assets/cbef7669/img/clients-logo/guinness.svg',
-    'https://www.KongDev.com/app/assets/cbef7669/img/clients-logo/jaguar.svg',
-    'https://www.KongDev.com/app/assets/cbef7669/img/clients-logo/walt-disney.svg',
-    'https://www.KongDev.com/app/assets/cbef7669/img/clients-logo/guest-services.svg',
-    'https://www.KongDev.com/app/assets/cbef7669/img/clients-logo/cirrus.svg',
-    'https://www.KongDev.com/app/assets/cbef7669/img/clients-logo/wynn.svg',
-    'https://www.KongDev.com/app/assets/cbef7669/img/clients-logo/melco.svg',
-    'https://www.KongDev.com/app/assets/cbef7669/img/clients-logo/euro-accident.svg',
-    'https://www.KongDev.com/app/assets/cbef7669/img/clients-logo/bombardier.svg',
-    'https://www.KongDev.com/app/assets/cbef7669/img/clients-logo/harley.svg',
-    'https://www.KongDev.com/app/assets/cbef7669/img/clients-logo/gulls.svg',
-    'https://www.KongDev.com/app/assets/cbef7669/img/clients-logo/nestle.svg',
-    'https://www.KongDev.com/app/assets/cbef7669/img/clients-logo/giant.svg',
-    'https://www.KongDev.com/app/assets/cbef7669/img/clients-logo/land-rover.svg',
-    'https://www.KongDev.com/app/assets/cbef7669/img/clients-logo/hoosbaa.svg',
-    'https://www.KongDev.com/app/assets/cbef7669/img/clients-logo/griffins.svg	',
-    'https://www.KongDev.com/app/assets/cbef7669/img/clients-logo/af-gruppen.svg',
-  ];
 
   const images = [
     'https://www.KongDev.com/app/assets/cbef7669/img/ratings-logos/inc-5000.png',
@@ -147,7 +125,7 @@
   <div />
 </section>
 
-<section class="w-[80%] m-auto">
+<!-- <section class="w-[80%] m-auto">
   <h1 class={'text-center'}>AWARDS & RECOGNITION</h1>
   <div class="flex flex-wrap w-full justify-between">
     {#each images as imgs}
@@ -158,4 +136,4 @@
       />
     {/each}
   </div>
-</section>
+</section> -->
