@@ -7,7 +7,7 @@
   import Slider from '../components/slider.svelte';
   const ongoing = [
     {
-      text: 'We welcome Mr. Vinh Quan, the head Project Operation for Vintage Tech Corporation. He will lead the team to run security protocols and Installations.',
+      text: 'We welcome Mr. Vinh Quan, the head Project Operation for Kongdev Tech Corporation to Polygone Solutions Modulaires in Bastogne Belgium. He will lead the team to run security protocols and Installations. Thank you Mr Vinh Quan',
       img: '/img.png',
     },
     {
